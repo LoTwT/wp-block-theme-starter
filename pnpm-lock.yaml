@@ -1,7 +1,9 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@types/wordpress__block-editor': ^7.0.0
   '@types/wordpress__blocks': ^11.0.7
+  '@types/wordpress__components': ^19.10.3
   '@wordpress/api-fetch': ^6.15.0
   '@wordpress/block-editor': ^10.1.0
   '@wordpress/blocks': ^11.17.0
@@ -31,7 +33,9 @@ dependencies:
   normalize.css: 8.0.1
 
 devDependencies:
+  '@types/wordpress__block-editor': 7.0.0
   '@types/wordpress__blocks': 11.0.7
+  '@types/wordpress__components': 19.10.3
   fast-glob: 3.2.12
   lint-staged: 13.0.3
   pnpm: 7.12.1
@@ -2604,6 +2608,21 @@ packages:
       source-map: 0.6.1
     dev: false
 
+  /@types/wordpress__block-editor/7.0.0:
+    resolution: {integrity: sha512-JERpxKAQ7J07C2wtKxr+5ZE9NETIcpu0EiXuXka6Qmrq74oOypdy9jYdhMIYBDMOx4ptR3ne7edaFb2+1SBcqA==}
+    dependencies:
+      '@types/react': 17.0.50
+      '@types/wordpress__blocks': 11.0.7
+      '@types/wordpress__components': 19.10.3
+      '@types/wordpress__data': 6.0.1
+      '@types/wordpress__keycodes': 2.3.1
+      '@wordpress/element': 4.16.0
+      react-autosize-textarea: 7.1.0
+    transitivePeerDependencies:
+      - react
+      - react-dom
+    dev: true
+
   /@types/wordpress__blocks/11.0.7:
     resolution: {integrity: sha512-8BcT3CUxHt73CepaLtQHAhA7uBhDOK9x5HJOAxzV+Bl37W04u4jSNulXxwX/6tI7t7Knux5lnN9bvKf/1sg+Rw==}
     dependencies:
@@ -2635,6 +2654,10 @@ packages:
     dependencies:
       '@types/react': 17.0.50
       redux: 4.2.0
+    dev: true
+
+  /@types/wordpress__keycodes/2.3.1:
+    resolution: {integrity: sha512-CUZv3WdPvWqnEwojbc4yEttwZlvsMGI8YurgB9CHVJXx6nQ4U2RU6PB0Mv7nxATufduFDMKq8TNpCHBenZqEjQ==}
     dev: true
 
   /@types/wordpress__notices/3.5.0:
@@ -4038,7 +4061,6 @@ packages:
 
   /autosize/4.0.4:
     resolution: {integrity: sha512-5yxLQ22O0fCRGoxGfeLSNt3J8LB1v+umtpMnPW6XjkTWXKoN0AmXAIhelJcDtFT/Y/wYWmfE+oqU10Q0b8FhaQ==}
-    dev: false
 
   /axe-core/4.4.3:
     resolution: {integrity: sha512-32+ub6kkdhhWick/UjvEwRchgoetXqTK14INLqbGm5U2TzBkBNF3nQtLYm8ovxSkQWArjEQvftCKryjZaATu3w==}
@@ -4734,7 +4756,6 @@ packages:
 
   /computed-style/0.1.4:
     resolution: {integrity: sha512-WpAmaKbMNmS3OProfHIdJiNleNJdgUrJfbKArXua28QF7+0CoZjlLn0lp6vlc+dl5r2/X9GQiQRQQU4BzSa69w==}
-    dev: false
 
   /concat-map/0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
@@ -7889,7 +7910,6 @@ packages:
     engines: {node: '>= 4.0.0'}
     dependencies:
       computed-style: 0.1.4
-    dev: false
 
   /lines-and-columns/1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
@@ -9726,7 +9746,6 @@ packages:
       autosize: 4.0.4
       line-height: 0.3.1
       prop-types: 15.8.1
-    dev: false
 
   /react-colorful/5.6.1:
     resolution: {integrity: sha512-1exovf0uGTGyq5mXQT0zgQ80uvj2PCwvF8zY1RN9/vbJVSjSo3fsB/4L3ObbF7u70NduSiK4xu4Y6q1MHoUGEw==}
