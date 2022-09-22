@@ -9,6 +9,7 @@ lib-cov
 logs
 node_modules
 temp
+build
 
 auto-imports.d.ts
 pnpm-lock.yaml
