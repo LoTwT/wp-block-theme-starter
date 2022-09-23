@@ -6,20 +6,31 @@ const rimraf = require("rimraf")
 const defaultConfig = require("@wordpress/scripts/config/webpack.config")
 
 const getBlocks = () => {
-  const blockPaths = fg.sync("./custom-blocks/**/*.+(ts|tsx|js|jsx)")
+  const blockPaths = fg.sync("./blocks/**/*.+(ts|tsx|js|jsx)")
 
   const blocks = blockPaths.map((p) => {
-    const res = p.match(/\.\/custom-blocks\/(.*)\.(j|t)sx?$/)
+    const res = p.match(/\.\/blocks(\/.*)+\.(?:j|t)sx?$/)
 
-    const fileName = res?.[1] ?? null
+    const route = res?.[1] ?? null
 
-    if (!fileName) return null
+    if (!route) return null
+
+    const routes = route.slice(1).split("/")
+
+    const folderName = routes?.[0] ?? null
+    const fileName = routes?.at(-1) ?? null
+
+    if (!folderName) return null
+
+    if (fileName !== folderName && fileName !== "index") return null
 
     return {
-      name: fileName,
+      name: folderName,
       path: p,
     }
   })
+
+  console.log(blocks)
 
   return blocks
 }
@@ -40,7 +51,7 @@ module.exports = function () {
         merge(defaultConfig, {
           entry: { [block.name]: block.path },
           output: {
-            path: path.resolve(__dirname, "build"),
+            path: path.resolve(__dirname, "build", block.name),
           },
         }),
       ),
