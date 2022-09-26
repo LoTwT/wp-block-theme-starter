@@ -29,7 +29,7 @@ class JSXBlock {
   function ourRenderCallback($attributes, $content) {
     // 创建缓冲区读取 buffer
     ob_start();
-    require get_theme_file_path("/blocks/{$this->name}/{$this->name}.php");
+    require get_theme_file_path("/src/blocks/{$this->name}/{$this->name}.php");
     return ob_get_clean();
   }
 
@@ -65,7 +65,7 @@ class PlaceholderBlock {
   function ourRenderCallback($attributes, $content) {
     // 创建缓冲区读取 buffer
     ob_start();
-    require get_theme_file_path("/blocks/{$this->name}/{$this->name}.php");
+    require get_theme_file_path("/src/blocks/{$this->name}/{$this->name}.php");
     return ob_get_clean();
   }
 

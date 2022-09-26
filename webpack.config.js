@@ -6,10 +6,10 @@ const rimraf = require("rimraf")
 const defaultConfig = require("@wordpress/scripts/config/webpack.config")
 
 const getBlocks = () => {
-  const blockPaths = fg.sync("./blocks/**/*.+(ts|tsx|js|jsx)")
+  const blockPaths = fg.sync("./src/blocks/**/*.+(ts|tsx|js|jsx)")
 
   const blocks = blockPaths.map((p) => {
-    const res = p.match(/\.\/blocks(\/.*)+\.(?:j|t)sx?$/)
+    const res = p.match(/\.\/src\/blocks(\/.*)+\.(?:j|t)sx?$/)
 
     const route = res?.[1] ?? null
 
